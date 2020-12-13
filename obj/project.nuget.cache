@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "16TSKmDNW4ntSoKW4afp1qknrRFbjw4GPZi4FkhcSrty93QAIFCFrNFVwVLokpU1TlEONXWHIL0g+/bAg0UIoQ==",
+  "success": true,
+  "projectFilePath": "/Users/dalehurtt/Projects/pohwbem/pohwbem.fsproj",
+  "expectedPackageFiles": [
+    "/Users/dalehurtt/.nuget/packages/fsharp.core/5.0.0/fsharp.core.5.0.0.nupkg.sha512",
+    "/Users/dalehurtt/.nuget/packages/nstack.core/0.14.0/nstack.core.0.14.0.nupkg.sha512",
+    "/Users/dalehurtt/.nuget/packages/terminal.gui/0.81.0/terminal.gui.0.81.0.nupkg.sha512",
+    "/Users/dalehurtt/.nuget/packages/terminal.gui.elmish/0.1.7/terminal.gui.elmish.0.1.7.nupkg.sha512"
+  ],
+  "logs": []
+}

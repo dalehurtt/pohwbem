@@ -1,0 +1,228 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "FSharp.Core/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FSharp.Core.dll": {}
+        },
+        "resource": {
+          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "NStack.Core/0.14.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NStack.dll": {}
+        }
+      },
+      "Terminal.Gui/0.81.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.14.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Terminal.Gui.dll": {}
+        }
+      },
+      "Terminal.Gui.Elmish/0.1.7": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Terminal.Gui": "0.81.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.Elmish.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.Elmish.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FSharp.Core/5.0.0": {
+      "sha512": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
+      "type": "package",
+      "path": "fsharp.core/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "fsharp.core.5.0.0.nupkg.sha512",
+        "fsharp.core.nuspec",
+        "lib/netstandard2.0/FSharp.Core.dll",
+        "lib/netstandard2.0/FSharp.Core.xml",
+        "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/de/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/es/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/fr/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/it/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ja/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ko/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/pl/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ru/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "NStack.Core/0.14.0": {
+      "sha512": "zYNd8033b7BPIw7LSNMFu3H1WovQa2XQXd3cZ+Xs/0EPqy0ZhT6bKr4+8eqFpvpD0yx2QvwkvLL0bCqSnJxKNA==",
+      "type": "package",
+      "path": "nstack.core/0.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NStack.dll",
+        "nstack.core.0.14.0.nupkg.sha512",
+        "nstack.core.nuspec"
+      ]
+    },
+    "Terminal.Gui/0.81.0": {
+      "sha512": "HSW9pvxXC+tzspTlUaqksNCoum5L7purbf/vXZgaMHHG5oye7DtxlOKjvSXMSKlxHN4JxZvfEGPUbjcA2B81sQ==",
+      "type": "package",
+      "path": "terminal.gui/0.81.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/Terminal.Gui.dll",
+        "lib/net472/Terminal.Gui.xml",
+        "lib/netstandard2.0/Terminal.Gui.dll",
+        "lib/netstandard2.0/Terminal.Gui.xml",
+        "terminal.gui.0.81.0.nupkg.sha512",
+        "terminal.gui.nuspec"
+      ]
+    },
+    "Terminal.Gui.Elmish/0.1.7": {
+      "sha512": "a04t1OyQ7ABIHgasnhjymR23Nc1f+Ap6xHSKXN/s8IviCqjtk3g3Bk7rnwgqhx8NnZmVQczwXEI1wOmqk8aiQg==",
+      "type": "package",
+      "path": "terminal.gui.elmish/0.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/Terminal.Gui.Elmish.dll",
+        "lib/netcoreapp2.0/Terminal.Gui.Elmish.dll",
+        "terminal.gui.elmish.0.1.7.nupkg.sha512",
+        "terminal.gui.elmish.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "FSharp.Core >= 5.0.0",
+      "Terminal.Gui.Elmish >= 0.1.7"
+    ]
+  },
+  "packageFolders": {
+    "/Users/dalehurtt/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/dalehurtt/Projects/pohwbem/pohwbem.fsproj",
+      "projectName": "pohwbem",
+      "projectPath": "/Users/dalehurtt/Projects/pohwbem/pohwbem.fsproj",
+      "packagesPath": "/Users/dalehurtt/.nuget/packages/",
+      "outputPath": "/Users/dalehurtt/Projects/pohwbem/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/dalehurtt/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "FSharp.Core": {
+            "target": "Package",
+            "version": "[5.0.0, )",
+            "generatePathProperty": true
+          },
+          "Terminal.Gui.Elmish": {
+            "target": "Package",
+            "version": "[0.1.7, )",
+            "generatePathProperty": true
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
