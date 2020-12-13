@@ -29,26 +29,24 @@ let update (msg : Msg) (model : Model) =
         { model with StatusMessage = m }, Cmd.none
 
 let view (model : Model) (dispatch : Msg -> unit) =
-    let undoItem = menuItem "Undo" "" (fun () -> dispatch (UpdateStatus "Undo"))
-    undoItem.HotKey <- System.Rune ('z')
+    //let undoItem = menuItem "Undo" "" (fun () -> dispatch (UpdateStatus "Undo"))
+    //undoItem.HotKey <- System.Rune ('z')
     page [
         statusBar [
             statusItem model.StatusMessage Terminal.Gui.Key.Unknown (fun () -> ())
         ]
         menuBar [
             menuBarItem "File" [
-                menuItem "_New Game..." "Start a new game" (fun () -> ())
-                menuItem "_Open Game..." "Continue a game" (fun () -> ())
+                menuItem "_New Game..." "Start a new game" (fun () -> dispatch (UpdateStatus "New Game"))
+                menuItem "_Open Game..." "Continue a game" (fun () -> dispatch (UpdateStatus "Open Game"))
                 menuItem "E_xit" "Exit POHWBEM" (fun () -> Program.quit ())
             ]
             menuBarItem "Edit" [
-                undoItem
-                menuItem "Redo" "" (fun () -> ())
-                menuItem "Cut" "" (fun () -> ())
-                menuItem "Copy" "" (fun () -> ())
-                menuItem "Paste" "" (fun () -> ())
+                menuItem "Undo" "" (fun () -> dispatch (UpdateStatus "Undo"))
+                menuItem "Redo" "" (fun () -> dispatch (UpdateStatus "Redo"))
+                menuItem "Cut" "" (fun () -> dispatch (UpdateStatus "Cut"))
+                menuItem "Copy" "" (fun () -> dispatch (UpdateStatus "Copy"))
+                menuItem "Paste" "" (fun () -> dispatch (UpdateStatus "Paste"))
             ]
         ]
-        
     ]
- 
