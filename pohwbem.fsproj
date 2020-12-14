@@ -4,9 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Start.fs" />
+    <Compile Include="Scenarios.fs" />
+    <Compile Include="GameState.fs" />
     <Compile Include="NewGame.fs" />
     <Compile Include="ContinueGame.fs" />
+    <Compile Include="Start.fs" />
     <Compile Include="App.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

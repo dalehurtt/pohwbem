@@ -8,9 +8,9 @@ open ContinueGame
 
 
 type Pages =
-    | Start
-    | NewGame
-    | ContinueGame
+    | StartPage
+    | NewPage
+    | ContinuePage
 
 
 type State = {
@@ -36,7 +36,7 @@ let init () =
     let initNewGame, cmdNewGame = NewGame.init ()
     let initContinueGame, cmdContinueGame = ContinueGame.init ()
     let initState = {
-        CurrentPage = Start
+        CurrentPage = StartPage
         Start = initStart
         NewGame = initNewGame
         ContinueGame = initContinueGame
@@ -71,7 +71,13 @@ let update msg prevState =
 
     | NavigateTo page ->
         let nextState = { prevState with CurrentPage = page }
-        nextState, Cmd.none
+        match page with
+        | StartPage -> nextState, Cmd.none
+
+        | NewPage -> nextState, Cmd.ofMsg (UpdateStatus "New Game")
+
+        | ContinuePage -> nextState, Cmd.ofMsg (UpdateStatus "Open Game")
+        
 
     | ExitApp ->
         Program.quit ()
@@ -89,20 +95,11 @@ let view (state : State) (dispatch : Msg -> unit) =
         menuBar [
             menuBarItem "_File" [
 
-                menuItem "_New Game..." "Start a new game" (fun () -> 
-                    dispatch (UpdateStatus "New Game")
-                    dispatch (NavigateTo NewGame)
-                )
+                menuItem "_New Game..." "Start a new game" (fun () -> dispatch (NavigateTo NewPage))
 
-                menuItem "_Open Game..." "Continue a game" (fun () -> 
-                    dispatch (UpdateStatus "Open Game")
-                    dispatch (NavigateTo ContinueGame)
-                )
+                menuItem "_Open Game..." "Continue a game" (fun () -> dispatch (NavigateTo ContinuePage))
 
-                menuItem "_Close Game" "Close the game" (fun () ->
-                    dispatch (UpdateStatus "Close Game")
-                    dispatch (NavigateTo Start)
-                )
+                menuItem "_Close Game" "Close the game" (fun () -> dispatch (NavigateTo StartPage))
 
                 menuItem "_Save Game..." "Save the current game" (fun () -> 
                     dispatch (UpdateStatus "Save Game")
@@ -126,13 +123,13 @@ let view (state : State) (dispatch : Msg -> unit) =
                 Title "Play One-Hour Wargames By EMail"
         ][
             match state.CurrentPage with
-            | Start ->
+            | StartPage ->
                 yield! Start.view
 
-            | NewGame ->
+            | NewPage ->
                 yield! NewGame.view state.NewGame (NewGameMsg >> dispatch)
 
-            | ContinueGame ->
+            | ContinuePage ->
                 yield! ContinueGame.view state.ContinueGame (ContinueGameMsg >> dispatch)
         ]
     ]

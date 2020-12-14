@@ -2,15 +2,14 @@ module ContinueGame
 
 open Terminal.Gui
 open Terminal.Gui.Elmish
+open GameState
 
-type State = {
-    Name : string
-}
+type State = GameState.State
 
 type Msg =
     | Started
 
-let init () = { Name = "" }, Cmd.none
+let init () = GameState.NotLoaded, Cmd.none
 
 let update msg state =
     match msg with
